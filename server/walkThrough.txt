@@ -1,0 +1,30 @@
+* Created Server. Using require http and createServer on port 5768. Provided callback function to createServer with request and response parameters.
+
+* Callback function contained code to configure response object with write and writeHead and end to send.
+
+* Use url module to parse the url and get the pathName.
+
+* Added router.js for routing. Takes PathName. Displays pathname.
+
+* Create requestHandler.js created start and upload functions as responses.
+
+* Create Handle in index.js to choose which page to respond. associative arrays ( objects in js ) to map pathname to functions in requestHandlers.
+
+* Pass handle and route function to server.
+
+* Server call router with pathname,handle.
+
+* Router decides which function to call using typeof handle[pathname] === 'function' and handle[pathname].
+
+
+* Now to add asynchronous and non blocking operations regular way of returning objects or contect for response objects will not work. as smth null might be returned due to non blocking nature. So we pass the response objects directly to the requestHandler so that they can respond when the task is completed. In this way we make use of single threaded, non-blocking and asynchronous nature of Node.
+
+
+* Used execute module - to run shell commands and callback function to respond based on their result. result can be read from stdout parameter in callback. example commands include ls -al, find.
+
+* Handling post request. Added listeners on request objects along with callback functions for status. Getting post data might take time. So we are doing it asynchronously.
+
+* Displaying image. Used module 'fs' readFile(filename,binary,callbackfunction(err,fname)); ** Content-Type = image/jpg or image/png Use res.write(file,"binary");
+
+* Used formidable directory to load images.
+

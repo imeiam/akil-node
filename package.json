@@ -1,0 +1,10 @@
+{
+	"name" : "akil-node",
+	"description" : "My first node deployment",
+	"main": "index.js",
+	"scripts": {
+		"start" : "node index.js"
+	}
+	"dependencies":{
+	}
+}
