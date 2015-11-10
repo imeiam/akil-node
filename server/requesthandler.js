@@ -33,6 +33,7 @@ function upload(res,req){
 		fs.rename(files.upload.path,'./pic.jpg',function(err){
 			if(err){
 				fs.unlink('./pic.jpg');
+				console.log(err);
 				fs.rename(files.upload.path,'./pic.jpg');
 			}
 		});
